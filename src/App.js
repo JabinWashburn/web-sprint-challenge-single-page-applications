@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, useHistory} from 'react-router-dom'
 import Form from './Form'
 import OrderList from './OrderList'
 import axios from 'axios'
@@ -17,19 +17,25 @@ const initialForm ={
 
 const App = () => {
 
+  const [order, setOrder] = useState([])
+
+  const history = useHistory()
+
   const handleSubmit = (e) => {
     e.preventDefault()
     axios
-    .post('http://reqre.in/api/pizza', form)
+    .post('https://reqres.in/api/users', form)
     .then((res) => {
       console.log(res)
+      setOrder([...order, res.data])
+      history.push('/pizza')
     })
     .catch((err) => console.log(err))
   }
 
   const [form, setForm] = useState(initialForm)
 
-  const [order, setOrder] = useState([])
+  
 
 
   const handleChange = (e) => {

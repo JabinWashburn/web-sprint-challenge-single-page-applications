@@ -2,7 +2,6 @@ import React from 'react'
 import {useHistory} from 'react-router-dom'
 
 function Form (props){
-    const history = useHistory()
 
     console.log(props)
 
@@ -50,7 +49,7 @@ function Form (props){
 
             <br></br>
             
-            <button form={form} type='submit' onClick={() => history.push('/pizza')}>Order Zaa!</button>
+            <button type='submit'>Order Zaa!</button>
 
         </form>
     )

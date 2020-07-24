@@ -2,7 +2,7 @@ import React from 'react'
 import history from './Form'
 
 export default function Order(props){
-    const {name, size, olive, pep, mushroom, pine, troll, ins} = props.user
+    const {name, size, olive, pep, mushroom, pine, troll, ins} = props.order
     return(
         <div>
             <h3>{name}</h3>
@@ -14,7 +14,7 @@ export default function Order(props){
             {pine && <p>Pineapple</p>}
             {troll && <p>Lol Someone Lost Pineapple</p>}
             <p>{ins}</p>
-            <button onClic={() => history.push('/')}>Home</button>
+            <button onClick={() => history.push('/')}>Home</button>
         </div>
     )
 }
