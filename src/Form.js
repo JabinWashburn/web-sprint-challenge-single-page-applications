@@ -1,17 +1,16 @@
 import React from 'react'
-import {useHistory} from 'react-router-dom'
+
 
 function Form (props){
 
-    console.log(props)
 
-    const {form, handleChange, handleSubmit } = props
+    const {form, handleChange, handleSubmit, disable } = props
 
     return(
         <form onSubmit={handleSubmit}>
             
             <h3>Name:</h3>
-            <input name='name' value={form.name} onChange={handleChange}></input>
+            <input id='name' name='name' value={form.name} onChange={handleChange}></input>
 
             <h2>Please Customize Your Pizza</h2>
 
@@ -27,20 +26,20 @@ function Form (props){
             <h3>Toppiings:</h3>
             <label>
                 <p>Black Olive</p>
-                <input name='olive' type='checkbox' checked={form.olive} onChange={handleChange}></input>
+                <input id='olive' name='olive' type='checkbox' checked={form.olive} onChange={handleChange}></input>
 
                 <p>Pepperoni</p>
-                <input name='pep' type='checkbox' checked={form.pep} onChange={handleChange}></input>
+                <input id='pep' name='pep' type='checkbox' checked={form.pep} onChange={handleChange}></input>
                 
                 <p>Mushroom</p>
-                <input name='mushroom' type='checkbox' checked={form.mushroom} onChange={handleChange}></input>
+                <input id='mushroom' name='mushroom' type='checkbox' checked={form.mushroom} onChange={handleChange}></input>
 
                 <p>Pineapple</p>
-                <input name='pine' type='checkbox' checked={form.pine} onChange={handleChange}></input>
+                <input id='pine' name='pine' type='checkbox' checked={form.pine} onChange={handleChange}></input>
                 
                 
                 <p>Remove Pine Apple From Someone Elses' Pizza</p>
-                <input name='troll' type='checkbox' checked={form.troll} onChange={handleChange}></input>
+                <input id='troll' name='troll' type='checkbox' checked={form.troll} onChange={handleChange}></input>
                 
             </label>
 
@@ -49,7 +48,7 @@ function Form (props){
 
             <br></br>
             
-            <button type='submit'>Order Zaa!</button>
+            <button id='order' disabled={disable} type='submit'>Order Zaa!</button>
 
         </form>
     )

@@ -7,7 +7,7 @@ export default function OrderList (props){
         <div>
             <h3>Order Details</h3>
             {props.order.map(order  => 
-                <Order order={order}/>
+                <Order order={order} key={order.id}/>
             )}
         </div>
     )
